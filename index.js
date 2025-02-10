@@ -8,6 +8,10 @@ const crypto = require('crypto');
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) =>{
+    res.send ("Api connected")
+})
+
 function generateToken() {
     return crypto.randomBytes(20).toString('hex');
 }
